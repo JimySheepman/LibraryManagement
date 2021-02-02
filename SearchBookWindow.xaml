@@ -1,0 +1,195 @@
+﻿<Window
+    x:Class="LibraryManagement.SearchBookWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+    xmlns:local="clr-namespace:LibraryManagement"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="SearchBookWindow"
+    Width="900"
+    Height="600"
+    AllowsTransparency="True"
+    Background="{x:Null}"
+    WindowStartupLocation="CenterScreen"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <Grid>
+        <Canvas>
+            <Label
+                Canvas.Left="270"
+                Canvas.Top="89"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Panel.ZIndex="3"
+                Content="Searching Books Window"
+                FontFamily="helvetica"
+                FontSize="22"
+                FontWeight="Light"
+                Foreground="White" />
+            <iconPacks:PackIconMaterial
+                Canvas.Left="176"
+                Canvas.Top="72"
+                Width="63"
+                Height="69"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Panel.ZIndex="3"
+                Foreground="#083da0"
+                Kind="BookSearch" />
+            <Rectangle
+                Canvas.Left="195"
+                Canvas.Top="89"
+                Width="500"
+                Height="33"
+                Panel.ZIndex="1"
+                Fill="#083da0" />
+            <Ellipse
+                Canvas.Left="150"
+                Canvas.Top="48"
+                Width="115"
+                Height="118"
+                Panel.ZIndex="2"
+                Fill="White"
+                StrokeThickness="4">
+                <Ellipse.Stroke>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Offset="0.0" Color="#7be9f6" />
+                        <GradientStop Offset="1" Color="#083da0" />
+                    </LinearGradientBrush>
+                </Ellipse.Stroke>
+            </Ellipse>
+            <Border
+                Canvas.Left="195"
+                Canvas.Top="89"
+                Width="500"
+                Height="421"
+                Background="#FFE0E0E0"
+                CornerRadius="0,0,50,50">
+                <Border.Effect>
+                    <DropShadowEffect Direction="275" Opacity="0.35" />
+                </Border.Effect>
+            </Border>
+            <DataGrid
+                x:Name="SearchGrid"
+                Canvas.Left="219"
+                Canvas.Top="171"
+                Width="456"
+                Height="179"
+                AutoGenerateColumns="True"
+                BorderBrush="{x:Null}"
+                BorderThickness="0"
+                IsReadOnly="True"
+                ItemsSource="{Binding}" />
+
+            <Label
+                Canvas.Left="219"
+                Canvas.Top="364"
+                Width="83"
+                Height="24"
+                Background="#083da0"
+                Content="Book Name"
+                FontFamily="helvetica"
+                FontSize="12"
+                FontWeight="Light"
+                Foreground="White" />
+            <TextBox
+                x:Name="BookNameBx"
+                Canvas.Left="307"
+                Canvas.Top="364"
+                Width="124"
+                Height="24" />
+
+            <Label
+                Canvas.Left="463"
+                Canvas.Top="364"
+                Width="83"
+                Height="24"
+                Background="#083da0"
+                Content="Author name"
+                FontFamily="helvetica"
+                FontSize="12"
+                FontWeight="Light"
+                Foreground="White" />
+            <TextBox
+                x:Name="AuthorNameBx"
+                Canvas.Left="551"
+                Canvas.Top="364"
+                Width="124"
+                Height="24" />
+            <Button
+                x:Name="SearchBttn"
+                Canvas.Left="307"
+                Canvas.Top="405"
+                Width="61"
+                Height="61"
+                Background="White"
+                Click="SearchBttn_Click"
+                Style="{DynamicResource modernbttn}">
+                <DockPanel>
+                    <iconPacks:PackIconMaterial
+                        Width="20"
+                        Height="20"
+                        Foreground="#083da0"
+                        Kind="BookSearchOutline" />
+                </DockPanel>
+            </Button>
+            <Button
+                x:Name="ExitBttn"
+                Canvas.Left="657"
+                Canvas.Top="75"
+                Width="50"
+                Height="50"
+                Panel.ZIndex="3"
+                Background="White"
+                Click="ExitBttn_Click"
+                Style="{DynamicResource modernbttn}">
+                <DockPanel>
+                    <iconPacks:PackIconMaterial
+                        Width="20"
+                        Height="20"
+                        Foreground="#083da0"
+                        Kind="ExitToApp" />
+                </DockPanel>
+            </Button>
+            <Button
+                x:Name="AuthorSearchBttn"
+                Canvas.Left="551"
+                Canvas.Top="405"
+                Width="61"
+                Height="61"
+                Panel.ZIndex="3"
+                Background="White"
+                Click="AuthorSearchBttn_Click"
+                Style="{DynamicResource modernbttn}">
+                <DockPanel>
+                    <iconPacks:PackIconMaterial
+                        Width="20"
+                        Height="20"
+                        Foreground="#083da0"
+                        Kind="NoteSearchOutline" />
+                </DockPanel>
+            </Button>
+
+            <Button
+                x:Name="RefreshSearchBttn"
+                Canvas.Left="449"
+                Canvas.Top="435"
+                Width="31"
+                Height="31"
+                Panel.ZIndex="3"
+                Background="White"
+                Click="RefreshSearchBttn_Click"
+                Style="{DynamicResource modernbttn}">
+                <DockPanel>
+                    <iconPacks:PackIconMaterial
+                        Width="20"
+                        Height="20"
+                        Foreground="#083da0"
+                        Kind="TableRefresh" />
+                </DockPanel>
+            </Button>
+
+        </Canvas>
+    </Grid>
+</Window>
